@@ -65,6 +65,6 @@ http://localhost:8000/docs
 
 ## Contacto
 
-Si tienes alguna pregunta o sugerencia sobre este proyecto, no dudes en contactarme en [jsanchez@educamas.com.co](jsanchez@educamas.com.co).
+Si tienes alguna pregunta o sugerencia o quieres el workbook para desarrollar este proyecto, no dudes en contactarme en [jsanchez@educamas.com.co](jsanchez@educamas.com.co).
 
 
