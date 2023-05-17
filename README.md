@@ -1,6 +1,4 @@
-# Nombre del Proyecto
-
-Proyecto de CRUD de Películas - FastAPI
+# Proyecto de CRUD de Películas - FastAPI
 
 <img src="img/programate.png" alt="Logo Programate">
 
