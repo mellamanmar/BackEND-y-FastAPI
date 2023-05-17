@@ -1,6 +1,6 @@
 # Proyecto de CRUD de Películas - FastAPI
 
-<img src="img/programate.png" alt="Logo Programate">
+<img src="img/programate-academy.png" alt="Logo Programate">
 
 ## Descripción
 
