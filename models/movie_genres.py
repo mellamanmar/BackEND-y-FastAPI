@@ -1,6 +1,6 @@
 from aqlalchemy import Column, ForeingKey, Integer
 
-from config import Base
+from config.database import Base
 
 class MovieGenres(Base):
 
