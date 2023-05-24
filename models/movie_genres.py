@@ -8,6 +8,6 @@ class MovieGenres(Base):
 
     id= Column (Integer, primary_key=True)
     gen_id= Column (Integer, ForeignKey("genre.id"))
-    movie_id= Column (Integer, FForeignKey("movie.id"))
+    movie_id= Column (Integer, ForeignKey("movie.id"))
 
     
