@@ -45,8 +45,6 @@ class MovieService():
 
 
     def delete_movie(self, id: int):
-       self.db.query(MovieModel).filter(MovieModel.id == id).delete()
-       self.db.commit()
-       return
-
-
+        self.db.query(MovieModel).filter(MovieModel.id == id).delete()
+        self.db.commit()
+        return
