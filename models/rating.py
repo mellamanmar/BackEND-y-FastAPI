@@ -10,3 +10,5 @@ class Rating(Base):
     rev_id = Column(Integer, ForeignKey("user.id"))
     rev_stars = Column(Integer)
     num_o_ratings = Column(Integer)
+
+#a 

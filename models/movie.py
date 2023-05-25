@@ -14,10 +14,3 @@ class Movie(Base):
     time = Column(Float)
     date_release = Column(String)
     release_contry = Column(String)
-
-
-
-
-
-
-    
