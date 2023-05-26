@@ -14,7 +14,7 @@ def get_genres():
     #función que trae todos los géneros que están en servicio
     return JSONResponse (content={"menssage": "estos son los géneros"})
 
-@genres_router.post ('/genres', tags= 'genres', status_code=201)
+@genres_router.post ('/genres', tags= ['genres'], status_code=201)
 def create_genres():
     #llamar a una función que va a estar en el servicio
     return JSONResponse (content={"menssage": "genres created succesfully"})
