@@ -17,7 +17,7 @@ def get_genres():
 @genres_router.post ('/genres', tags= 'genres', status_code=201)
 def create_genres():
     #llamar a una función que va a estar en el servicio
-    return JSONResponse (content={"menssage": "genre created succesfully"})
+    return JSONResponse (content={"menssage": "genres created succesfully"})
 
 #para el genres delete debemos verificar que el id existe y después ese género lo eliminamos
 # creamos un get que tare un sólo género por id (para crear las acciones put y delete)
