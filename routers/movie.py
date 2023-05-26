@@ -24,6 +24,7 @@ def get_movies() -> Movie:
 
 @movie_router.get('/movies/{id}',tags=['movies'])
 def get_movie(id:int = Path(ge=1,le=2000)):
+    #Esta función tiene sólo una película por id
     db = Session()
     result = MovieService(db).get_movie(id)
     if not result:
