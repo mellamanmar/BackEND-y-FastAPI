@@ -1,5 +1,4 @@
 from sqlalchemy import Column, String, Integer
-
 from config.database import Base
 
 class Genres(Base):
