@@ -35,7 +35,7 @@ def create_genres(genres: Genres):
     return JSONResponse (content={"menssage": "genre created succesfully", "status_code": 201}, status_code= 201)
 
 @genres_router.put('/genres{id}', tags= ['genres'])
-def update_genre(id:int,data:GenresSchema):
+def update_genre(id:int,data:Genres):
     db= Session()
     result= GenresService(db).get_for_id(id)
     if not result:
