@@ -20,7 +20,6 @@ def get_genres():
     result = GenresService(db).get_genres()
     return JSONResponse (content=jsonable_encoder(result), status_code=200)
 
-
 @genres_router.get('/genres_for_id', tags=['genres'], status_code=200)
 def get_genres_fot_id(id:int):
     db= Session()
