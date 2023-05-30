@@ -24,7 +24,7 @@ def get_actor_for_id(id:int):
 def create_actor(actor:Actor):
     db = Session()
     ActorService(db).create_actor(actor)
-    return JSONResponse (content={"menssage": "actor created succesfully", "status_code": 201}, status_code= 201)
+    return JSONResponse (content={"menssage": "acotr created succesfully", "status_code": 201}, status_code= 201)
 
 @actor_router.put('/actor{id}',tags=['actor'])
 def update_actor(id:int,data:Actor):
@@ -43,4 +43,3 @@ def delete_actor(id:int):
         return JSONResponse(content= {"message":"actor don't gound", "status_code":404})
     ActorService(db).delete_actor(id)
     return JSONResponse(content={"message":"actor delete succesfully", "status_code":200}, status_code=200)
-
