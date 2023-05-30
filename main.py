@@ -7,7 +7,7 @@ from config.database import engine,Base
 from middlewares.error_handler import Errorhandler
 from routers.movie import movie_router
 from routers.genres import genres_router
-
+from routers.actor import actor_router
 
 app = FastAPI()
 app.title = "Mi app con FastAPI"
@@ -16,6 +16,7 @@ app.version = "0.0.1"
 app.add_middleware(Errorhandler)
 app.include_router(movie_router)
 app.include_router(genres_router)
+app.include_router(actor_router)
 
 Base.metadata.create_all(bind=engine)
 

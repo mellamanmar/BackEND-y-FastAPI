@@ -27,7 +27,9 @@ class ActorService():
     def update_actor(self,data:ActorModel):
         actor = self.db.query(ActorModel).filter(ActorModel.id == data.id).first()
         actor.act_fname = data.act_fname
-        self.db.commit()
+        actor.act_lname = data.act_lname
+        actor.act_gender = data.act_gender
+        self.db.commit()        
         return
     
     def delete_genre(self,id:int):
