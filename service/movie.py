@@ -21,12 +21,13 @@ class MovieService():
 
     def create_movie(self, movie:Movie):
         new_movie = MovieModel(
-        title=movie.title,
-        overview = movie.overview,
-        year = movie.year,
-        time = movie.time,
-        date_release = movie.date_release,
-        release_contry = movie.release_contry
+            title=movie.title,
+            overview = movie.overview,
+            year = movie.year,
+            time = movie.time,
+            date_release = movie.date_release,
+            movie_cast_id = movie.movie_cast_id,
+            release_contry = movie.release_contry        
         )
         self.db.add(new_movie)
         self.db.commit()

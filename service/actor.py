@@ -13,7 +13,8 @@ class ActorService():
         new_actor = ActorModel(
             act_fname = actor.act_fname,
             act_lname = actor.act_lname,
-            act_gender = actor.act_gender.upper()
+            act_gender = actor.act_gender.upper(),
+            movie_cast_id=actor.movie_cast_id
         )
         self.db.add(new_actor)
         self.db.commit()
