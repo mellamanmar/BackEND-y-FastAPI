@@ -54,21 +54,3 @@ def delete_genre(id:int):
 
 #para el genres delete debemos verificar que el id existe y después ese género lo eliminamos
 # creamos un get que tare un sólo género por id (para crear las acciones put y delete)
-
-@genres_router.put('/genres{id}',tags=['genres'])
-def update_genre(id:int,data:Genres):
-    db = Session()
-    result = GenresService(db).get_for_id(id)
-    if not result:
-        return JSONResponse(content={'message':"genre don't gound","status_code":404})
-    GenresService(db).update_genre(data)
-    return JSONResponse (content={"menssage": "genre created succesfully", "status_code": 202}, status_code= 202)
-
-@genres_router.delete('/genres{id}',tags=['genres'])
-def delete_genre(id:int):
-    db = Session()
-    result = GenresService(db).get_for_id(id)
-    if not result:
-        return JSONResponse(content={'message':"genre don't gound","status_code":404})
-    GenresService(db).delete_genre(id)
-    return JSONResponse (content={"menssage": "genre delete succesfully", "status_code": 200}, status_code= 200)
