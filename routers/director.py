@@ -7,17 +7,11 @@ from schemas.director import Director
 
 director_router = APIRouter()
 
-#
-#
-#
-#
-
 
 @director_router.get('/director', tags=['director'], status_code=200)
 def get_director():
-    #
     db = Session()
-    result = DirectorService(db).get_directors()
+    result = DirectorService(db).get_director()
     return JSONResponse(content=jsonable_encoder(result), status_code=200)
 
 @director_router.get('/director/{id}', tags=['director'], status_code=200)
@@ -51,6 +45,3 @@ def delete_director(id: int):
         return JSONResponse(content={"message": "Director not found", "status_code": 404})
     DirectorService(db).delete_director(id)
     return JSONResponse(content={"message": "Director deleted successfully", "status_code": 200}, status_code=200)
-
-#
-#

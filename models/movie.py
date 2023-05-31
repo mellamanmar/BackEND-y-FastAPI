@@ -16,3 +16,5 @@ class Movie(Base):
     release_contry = Column(String)
 
     movie_casts = relationship("Movie_cast", foreign_keys="[Movie_cast.mov_id]", back_populates="movie")
+    movie_directions = relationship("Movie_direction", foreign_keys='[Movie_direction.movie_id]',back_populates="movie")
+    
