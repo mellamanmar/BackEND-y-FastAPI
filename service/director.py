@@ -1,5 +1,5 @@
 from models.director import Director as DirectorModel
-from schemas.director import Director as DirectorSchema
+
 
 class DirectorService():
     def __init__(self, db):
@@ -11,7 +11,7 @@ class DirectorService():
 
     def create_director(self, director: DirectorModel):
         new_director = DirectorModel(
-            dir_fname = director.dir_fname.upper(),
+            dir_fname = director.dir_fname,
             dir_lname = director.dir_lname.upper()
         )
         self.db.add(new_director)
@@ -19,16 +19,16 @@ class DirectorService():
         return
     
     def get_director_by_id(self, id: int):
-        result = self.db.query(DirectorModel).filter(DirectorModel.dir_id == id).first()
+        result = self.db.query(DirectorModel).filter(DirectorModel.id == id).first()
         return result
 
     def update_director(self, data: DirectorModel):
-        director = self.db.query(DirectorModel).filter(DirectorModel.dir_id == data.dir_id).first()
+        director = self.db.query(DirectorModel).filter(DirectorModel.id == data.id).first()
         director.dir_fname = data.dir_fname
         director.dir_lname = data.dir_lname
         self.db.commit()
         return 
 
     def delete_director(self, id: int):
-        self.db.query(DirectorModel).filter(DirectorModel.dir_id == id).delete()
+        self.db.query(DirectorModel).filter(DirectorModel.id == id).delete()
         self.db.commit()
