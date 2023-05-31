@@ -7,21 +7,15 @@ from config.database import Session
 
 director_router = APIRouter()
 
-#    
-#
-#
-#
 
 @director_router.get('/director', tags=['director'], status_code=200)
 def get_director():
-    #
     db = Session()
     result = DirectorService(db).get_director()
-    return JSONResponse(content=jsonable_encoder(result), status_code = 200)
-    
-    
-@director_router.get('/director_id', tags=['director'], status_code=200)
-def get_director_for_id(id:int):
+    return JSONResponse(content=jsonable_encoder(result), status_code=200)
+
+@director_router.get('/director/{id}', tags=['director'], status_code=200)
+def get_director_by_id(id: int):
     db = Session()
     result = DirectorService(db).get_for_id(id)
     return JSONResponse(content=jsonable_encoder(result),status_code=200)
@@ -51,6 +45,3 @@ def delete_director(id:int,movie:Director):
         return JSONResponse(content={"message":"director dont't found", "status_code":404})
     DirectorService(db).delete_director(id)
     return JSONResponse(content={"message":"director delete successfully", "status_code":200}, status_code=200)
-
-#
-#
