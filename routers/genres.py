@@ -5,6 +5,7 @@ from config.database import Session
 from fastapi.encoders import jsonable_encoder
 from schemas.genres import Genres
 
+
 genres_router= APIRouter()
 
 # #función para verificar que está bien
