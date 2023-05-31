@@ -15,7 +15,7 @@ def get_director():
     return JSONResponse(content=jsonable_encoder(result), status_code=200)
 
 @director_router.get('/director/{id}', tags=['director'], status_code=200)
-def get_director_by_id(id: int):
+def get_director_for_id(id: int):
     db = Session()
     result = DirectorService(db).get_for_id(id)
     return JSONResponse(content=jsonable_encoder(result),status_code=200)
@@ -38,7 +38,7 @@ def update_director(id:int,director:Director):
     
     
 @director_router.delete("/director{id}",tags=["director"])
-def delete_director(id:int,movie:Director):
+def delete_director(id:int,):
     db = Session()
     result = DirectorService(db).get_for_id(id)
     if not result:
