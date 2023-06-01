@@ -32,7 +32,7 @@ def update_movie_direction(id:int,data:Movie_direction):
     result = Movie_directionService(db).get_for_id(id)
     if not result:
         return JSONResponse(content={'message':"movie_direction don't found","status_code":404})
-    Movie_directionService(db).update_movie_cast(data)
+    Movie_directionService(db).update_movie_direction(data)
     return JSONResponse(content={"message":"movie_direction updated succesfully", "status_code":200}, status_code=200)
 
 @movie_direction_router.delete('/movie_direction{id}',tags=['movie_direction'])
